@@ -9,6 +9,9 @@
             <div
                 class="lin col-md-4"
                 @click.prevent="
+                    true_linda();
+                    hide = false;
+                    edit = false;
                     product.klic = !product.klic;
                     hide = !hide;
                 "
@@ -72,16 +75,10 @@
                     <h4 style="margin-right:380px">
                         {{ product.description }}
                     </h4>
-                    <h6
-                        class="col-md-6"
-                        style="margin-right:350px;margin-left:10px;"
-                    >
+                    <h6 class="col-md-6" style="margin-left:1px;">
                         {{ product.tit }} ({{ product.nu1 }})
                     </h6>
-                    <h6
-                        class="col-md-6"
-                        style="margin-right:350px;margin-left:10px;"
-                    >
+                    <h6 class="col-md-6" style="margin-left:1px;">
                         {{ product.tit2 }} ({{ product.nu2 }})
                     </h6>
                 </div>
@@ -97,7 +94,7 @@
                 >
                     <button
                         style="background-color:green;color:#FFF;padding:5px;"
-                        @click.stop="save"
+                        @click.prevent="save;"
                     >
                         Save
                     </button>
@@ -430,8 +427,18 @@ export default {
         };
     },
     methods: {
-        del(index1) {
-            this.products.splice(index1, 1);
+        true_linda() {
+            for (let i = 0; i < this.products.length; i++) {
+                this.products[i].klic = false;
+                console.log(this.products[i]);
+            }
+        },
+        del(id) {
+            for (let index1 = 0; index1 < this.products.length; index1++) {
+                if (id == this.products[index1].id) {
+                    this.products.splice(index1, 1);
+                }
+            }
         },
         Add() {
             this.outp.push({ wor: this.inpu1, wow: this.inpu2, done: false });
@@ -515,18 +522,25 @@ export default {
     width: 50px !important;
     height: 60px;
 }
-@media (max-width: 1050px) {
+@media (max-width: 1110px) {
     .info {
-        margin-left: 320px !important;
+        margin-left: 400px !important;
     }
     .info2 {
-        margin-left: 320px !important;
+        margin-left: 400px !important;
+    }
+}
+@media (max-width: 770px) {
+    .info {
+        margin-left: 300px !important;
+    }
+    .info2 {
+        margin-left: 300px !important;
     }
 }
 .info h6 {
     padding: 12px;
     border: 1px solid #ddd;
-    margin-right: 90px;
 }
 .info {
     border: 1px solid #ddd;

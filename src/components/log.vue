@@ -71,6 +71,22 @@ export default {
     border: 1px solid #ddd;
     padding: 20px 15px;
 }
+@media (max-width: 500px) {
+    .log-in {
+        margin-left: -20px !important;
+        width: 440px !important;
+        height: 320px !important;
+        text-align: center !important;
+    }
+}
+@media (max-width: 1335px) {
+    .log-in {
+        margin-left: 90px !important;
+        width: 480px !important;
+        height: 320px;
+        text-align: center !important;
+    }
+}
 .log-in .form-group {
     margin-top: 20px;
     text-align: center !important;
