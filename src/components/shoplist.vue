@@ -89,9 +89,9 @@ export default {
 </script>
 <style scoped>
 .about {
-    margin-top: 20px;
+    margin-top: 25px;
     float: left;
-    margin-left: 40px;
+    margin-left: 30px;
 }
 .about .row label {
     font-weight: bold;
@@ -104,8 +104,32 @@ export default {
     width: 220px;
     height: 30px;
 }
+@media (max-width: 730px) {
+    .about .row label {
+        margin: 20px;
+        font-size: 20px;
+    }
+    .about .row input {
+        width: 150px;
+        height: 30px;
+    }
+}
+@media (max-width: 550px) {
+    .about .row label {
+        margin: 18px;
+        font-size: 23px;
+    }
+    .about .row input {
+        width: 320px;
+        height: 30px;
+    }
+}
+.about .buto {
+    margin-top: 20px;
+}
 .about .buto button {
     margin: 1px;
+    margin-bottom: 10px;
 }
 .about .buto .btn {
     background-color: darkcyan;

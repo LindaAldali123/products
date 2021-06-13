@@ -8,13 +8,7 @@
         >
             <div
                 class="lin col-md-4"
-                @click.prevent="
-                    true_linda();
-                    hide = false;
-                    edit = false;
-                    product.klic = !product.klic;
-                    hide = !hide;
-                "
+                @click.prevent="true_linda(product.klic, product.id)"
                 :class="[product.klic === true ? 'act' : ' ']"
             >
                 <div class="row">
@@ -427,10 +421,26 @@ export default {
         };
     },
     methods: {
-        true_linda() {
-            for (let i = 0; i < this.products.length; i++) {
-                this.products[i].klic = false;
-                console.log(this.products[i]);
+        true_linda(klic, id) {
+            if (klic == true) {
+                if (this.hide == false) {
+                    this.hide = true;
+                } else {
+                    this.products.klic = false;
+                    this.hide = false;
+                    this.edit = false;
+                }
+            } else {
+                this.hide = false;
+                this.edit = false;
+                for (let i = 0; i < this.products.length; i++) {
+                    if (id == this.products[i].id) {
+                        this.products[i].klic = true;
+                        this.hide = true;
+                    } else {
+                        this.products[i].klic = false;
+                    }
+                }
             }
         },
         del(id) {
@@ -485,14 +495,31 @@ export default {
     height: 100px;
     margin-bottom: 0 !important;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1290px) {
     .lin {
         width: 820px !important;
+        left: 0;
+    }
+    .img img {
+        margin-left: -57px;
+    }
+}
+@media screen and (min-width: 980px) and (max-width: 1260px) {
+    .img img {
+        margin-left: -37px;
+    }
+}
+@media screen and (min-width: 1100px) and (max-width: 1300px) {
+    .img img {
+        margin-left: -30px;
     }
 }
 @media (max-width: 767px) {
     .products {
         margin-left: -270px !important;
+    }
+    .lin .col-md-3 {
+        margin-left: 20px;
     }
     .lin {
         float: left !important;
@@ -532,10 +559,10 @@ export default {
 }
 @media (max-width: 770px) {
     .info {
-        margin-left: 300px !important;
+        margin-left: 280px !important;
     }
     .info2 {
-        margin-left: 300px !important;
+        margin-left: 280px !important;
     }
 }
 .info h6 {

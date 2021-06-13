@@ -1,37 +1,45 @@
 <template>
     <div class="log-in">
         <div class="container">
-            <form data-aos="fade-up" @submit.prevent="userRegistration">
-                <div class="form-group row">
-                    <label style="margin-right:+82px">E-Mail:</label>
-                    <input
-                        type="email"
-                        class="form-control"
-                        id="inputemail"
-                        v-model="user.email"
-                    />
-                </div>
-                <div class="form-group row">
-                    <label>Password:</label>
-                    <input
-                        type="password"
-                        class="form-control"
-                        id="inputpassword"
-                        v-model="user.password"
-                    />
-                </div>
-                <div class="row but">
-                    <button
-                        type="submit"
-                        class="btn btn-primary"
-                        :disabled="!user.email || !user.password"
-                    >
-                        Sign Up
-                    </button>
-                    |
-                    <button class="btn btn-primary">switch to Login</button>
-                </div>
-            </form>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <form
+                    data-aos="fade-up"
+                    class="col-md-8"
+                    @submit.prevent="userRegistration"
+                >
+                    <div class="form-group row">
+                        <label style="margin-right:+82px">E-Mail:</label>
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="inputemail"
+                            v-model="user.email"
+                        />
+                    </div>
+                    <div class="form-group row">
+                        <label>Password:</label>
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="inputpassword"
+                            v-model="user.password"
+                        />
+                    </div>
+                    <div class="row but">
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                            :disabled="!user.email || !user.password"
+                        >
+                            Sign Up
+                        </button>
+                        |
+                        <button class="btn btn-primary">switch to Login</button>
+                    </div>
+                </form>
+                <div class="col-md-2"></div>
+            </div>
         </div>
     </div>
 </template>
@@ -59,30 +67,42 @@ export default {
 };
 </script>
 <style>
-.container {
+.log-in .container {
     text-align: center !important;
+    direction: ltr;
 }
 .log-in {
+    background-image: url("../assets/back.jpg");
+    box-sizing: border-box;
     width: 700px;
-    height: 280px;
+    height: 320px;
     text-align: center;
     margin: 180px;
     margin-left: 180px !important;
     border: 1px solid #ddd;
-    padding: 20px 15px;
+    padding: 10px 15px;
 }
-@media (max-width: 500px) {
+@media (max-width: 578px) {
     .log-in {
-        margin-left: -20px !important;
-        width: 440px !important;
-        height: 320px !important;
+        margin-left: -190px !important;
+        width: 400px !important;
+        height: 280px !important;
+        margin-right: 160px !important;
         text-align: center !important;
     }
 }
 @media (max-width: 1335px) {
     .log-in {
-        margin-left: 90px !important;
-        width: 480px !important;
+        margin-left: 1px !important;
+        width: 600px !important;
+        height: 320px;
+        text-align: center !important;
+    }
+}
+@media (min-width: 1023px) {
+    .log-in {
+        margin-left: 100px !important;
+        width: 600px !important;
         height: 320px;
         text-align: center !important;
     }
