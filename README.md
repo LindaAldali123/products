@@ -27,3 +27,5 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+you can see the websit from :
+https://loving-mayer-products.netlify.app/
