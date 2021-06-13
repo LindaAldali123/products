@@ -14,13 +14,15 @@
                 "
                 :class="[product.klic === true ? 'act' : ' ']"
             >
-                <div class="col-md-3">
-                    <h2>{{ product.title }}</h2>
-                    <h6>{{ product.description }}</h6>
-                </div>
-                <div class="col-md-7"></div>
-                <div class="img col-md-2">
-                    <img v-bind:src="product.img" />
+                <div class="row">
+                    <div class="col-md-3">
+                        <h2>{{ product.title }}</h2>
+                        <h6>{{ product.description }}</h6>
+                    </div>
+                    <div class="col-md-5"></div>
+                    <div class="img col-md-4">
+                        <img v-bind:src="product.img" />
+                    </div>
                 </div>
             </div>
             <div class="col-md-2"></div>
@@ -89,7 +91,7 @@
                     class="info2"
                     @click.stop="edit"
                     v-if="product.klic && edit"
-                    style="margin-left:680px;border:1px solid #DDD "
+                    style="margin-left:600px;border:1px solid #DDD "
                     v-bind:key="product.id"
                     :class="[product.klic === true ? 'activ' : ' ']"
                 >
@@ -464,9 +466,8 @@ export default {
     width: 130px !important;
     height: 90px;
     padding: 3px;
-    margin-top: -88px;
-    margin-left: 282px;
-    margin-bottom: 2px;
+    margin-top: 3px !important;
+    margin-bottom: -4px !important;
 }
 .lin {
     border: 1px solid rgb(245, 235, 235);
@@ -477,6 +478,34 @@ export default {
     height: 100px;
     margin-bottom: 0 !important;
 }
+@media (max-width: 1280px) {
+    .lin {
+        width: 820px !important;
+    }
+}
+@media (max-width: 767px) {
+    .products {
+        margin-left: -270px !important;
+    }
+    .lin {
+        float: left !important;
+        left: 0 !important;
+    }
+    .img img {
+        margin-left: 500px !important;
+        margin-top: -69px !important;
+    }
+    .active {
+        margin-bottom: 20px !important;
+        /* margin-top: -100px; */
+    }
+    .activ {
+        margin-top: 20px !important;
+        margin-left: 300px !important;
+        margin-bottom: 20px !important;
+        bottom: 0;
+    }
+}
 .lin:hover {
     cursor: pointer;
     background-color: rgb(98, 132, 184) !important;
@@ -486,7 +515,14 @@ export default {
     width: 50px !important;
     height: 60px;
 }
-
+@media (max-width: 1050px) {
+    .info {
+        margin-left: 320px !important;
+    }
+    .info2 {
+        margin-left: 320px !important;
+    }
+}
 .info h6 {
     padding: 12px;
     border: 1px solid #ddd;
@@ -500,12 +536,12 @@ export default {
     margin-top: 10px;
     bottom: 0;
     top: 0;
-    margin-bottom: -520px !important;
+    margin-bottom: -520px;
     /* margin-top: -100px; */
 }
 .activ {
     margin-top: -60px;
-    margin-bottom: -750px !important;
+    margin-bottom: -750px;
     bottom: 0;
 }
 </style>

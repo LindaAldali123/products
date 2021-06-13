@@ -44,4 +44,13 @@ export default {
     margin-top: 75px;
     color: darkcyan;
 }
+@media (max-width: 767px) {
+    .home .row h1 {
+        margin-bottom: 60px;
+        text-align: center;
+        margin-left: 20px !important;
+        margin-top: 75px;
+        color: darkcyan;
+    }
+}
 </style>
